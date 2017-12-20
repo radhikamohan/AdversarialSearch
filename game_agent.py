@@ -190,7 +190,7 @@ class MinimaxPlayer(IsolationPlayer):
             raise SearchTimeout()
 
         if self.terminal_test(game, depth):
-            return self.score(game, game.active_player)
+            return self.score(game, game.inactive_player)
 
         v = float('inf')
         try:
@@ -335,7 +335,7 @@ class AlphaBetaPlayer(IsolationPlayer):
             raise SearchTimeout()
 
         if self.terminal_test(game, depth):
-            return self.score(game, game.active_player)
+            return self.score(game, game.inactive_player)
 
         v = float('inf')
         try:
