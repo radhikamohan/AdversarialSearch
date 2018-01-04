@@ -74,7 +74,7 @@ def custom_score_2(game, player):
         return float("inf")
     my_moves = len(game.get_legal_moves(player))
     opponent_moves = len(game.get_legal_moves(game.get_opponent(player)))
-    return float(my_moves - 1.5*opponent_moves)
+    return float(2*my_moves - opponent_moves)
 
 
 def custom_score_3(game, player):
@@ -107,7 +107,6 @@ def custom_score_3(game, player):
     my_moves = len(game.get_legal_moves(player))
     opponent_moves = len(game.get_legal_moves(game.get_opponent(player)))
     return float(my_moves/opponent_moves)
-
 
 class IsolationPlayer:
     """Base class for minimax and alphabeta agents -- this class is never
